@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Bookmark App</title>
+</head>
+
+<body>
+  <div class="container glases my-5">
+    <h1 class="text-center text-white">Bookmark Manager</h1>
+    <div class="  rounded p-4 my-5 ">
+      <h2 class="text-center text-white">
+        <i class="fa-solid fa-bookmark"></i> Bookmark Your Favorite Sites
+      </h2>
+      <form id="bookmarkForm" class="my-4 d-flex flex-column ">
+        <div class="mb-3">
+          <label for="siteName " class="form-label text-white">Site Name</label>
+          <input type="text" class="form-control" id="siteName" placeholder="Enter Site Name" />
+          <div id="nameMessage"
+            class="position-fixed top-50 start-50 translate-middle bg-white p-4 rounded shadow d-none d-flex flex-column">
+            <p class="my-2">Site Name or URL is not valid. Please follow the rules below</p>
+            <span class="my-2"><i class="fa-solid fa-circle-right"></i> Site name must contain at least 3
+              characters</span>
+            <span class="my-2"><i class="fa-solid fa-circle-right"></i> Site URL must be a valid one</span>
+          </div>
+          <div id="overlay" class="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-none"></div>
+
+        </div>
+        <div class="mb-3">
+          <label for="siteURL " class="form-label text-white">Site URL</label>
+          <input type="text" class="form-control" id="siteURL" placeholder="Enter Site URL" />
+          <div id="nameMessage"
+            class="position-fixed top-50 start-50 translate-middle bg-white p-4 rounded shadow d-none d-flex flex-column">
+            <p class="my-2">Site Name or URL is not valid. Please follow the rules below</p>
+            <span class="my-2"><i class="fa-solid fa-circle-right"></i> Site name must contain at least 3
+              characters</span>
+            <span class="my-2"><i class="fa-solid fa-circle-right"></i> Site URL must be a valid one</span>
+          </div>
+          <div id="overlay" class="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-none"></div>
+        </div>
+        <button type="button" class="btn btn-primary mx-auto" onclick="addBookmark()">
+          Add Bookmark
+        </button>
+      </form>
+
+    </div>
+
+    <table class="  table table-striped text-center table-bordered" id="bookmarkTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Website Name</th>
+          <th>Visit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="bookmarkList"></tbody>
+    </table>
+  </div>
+
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
